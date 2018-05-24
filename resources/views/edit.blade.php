@@ -1,7 +1,9 @@
 @extends('index')
+
 @section('content')
+
     <div class="col-md-7">
-        {!! Form::open(['route' => 'admin-panel.store']) !!}
+        {!! Form::model($post, array('route' => array('admin-panel.update', $post->goods_id), 'method' => 'PUT')) !!}
         <div class="form-group">
             <div class="col-md-2">
                 {{Form::label('goods_id', 'ID')}}
@@ -26,6 +28,8 @@
                 {{Form::textarea('content', null, ['class' => 'form-control']) }}
             </div>
         </div>
+
+
         <div class="form-group">
             <div class="col-md-2">
                 {{Form::label('img', 'img')}}
@@ -58,30 +62,7 @@
                 {{Form::text('goods_typeid', null, ['class' => 'form-control']) }}
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-2">
-                {{Form::label('visible', 'Видимость')}}
-            </div>
-            <div class="col-md-10">
-                {{Form::text('visible', null, ['class' => 'form-control']) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-2">
-                {{Form::label('hits', 'Популярное')}}
-            </div>
-            <div class="col-md-10">
-                {{Form::text('hits', null, ['class' => 'form-control']) }}
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-2">
-                {{Form::label('new', 'Новинки')}}
-            </div>
-            <div class="col-md-10">
-                {{Form::text('new', null, ['class' => 'form-control']) }}
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-2">
                 {{Form::label('sale', 'Распродажа')}}
@@ -90,6 +71,7 @@
                 {{Form::text('sale', null, ['class' => 'form-control']) }}
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-md-2">
                 {{Form::label('price', 'Цена')}}
@@ -107,9 +89,10 @@
             </div>
         </div>
 
+
         <div class="form-group">
             <div class="col-md-12">
-                {{ Form::submit('Опубликовать!', ['class' => 'btn btn-primary']) }}
+                {{ Form::submit('Обновить!', ['class' => 'btn btn-primary']) }}
             </div>
         </div>
 
