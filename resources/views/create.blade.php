@@ -44,10 +44,10 @@
         </div>
         <div class="form-group">
             <div class="col-md-2">
-                {{Form::label('sizeid', 'sizeid')}}
+                {{Form::label('size_id', 'size_id')}}
             </div>
             <div class="col-md-10">
-                {{Form::text('sizeid', null, ['class' => 'form-control']) }}
+                {{Form::text('size_id', null, ['class' => 'form-control']) }}
             </div>
         </div>
         <div class="form-group">
@@ -104,6 +104,14 @@
             </div>
             <div class="col-md-10">
                 {{Form::text('img_slim', null, ['class' => 'form-control']) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+                {{Form::label('created_at', 'created_at')}}
+            </div>
+            <div class="col-md-10">
+                {{Form::text('created_at', null, ['class' => 'form-control']) }}
             </div>
         </div>
 
